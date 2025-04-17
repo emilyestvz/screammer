@@ -1,5 +1,6 @@
 package br.com.alura.screemmer.modelos;
 
+// Herança da super classe Titulo
 public class Serie extends Titulo {
     private int temporadas;
     private boolean ativa;
