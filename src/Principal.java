@@ -1,4 +1,6 @@
 import br.com.alura.screemmer.calculos.CalculadoraDeTempo;
+import br.com.alura.screemmer.calculos.FiltroRecomendacao;
+import br.com.alura.screemmer.modelos.Episodio;
 import br.com.alura.screemmer.modelos.Filme;
 import br.com.alura.screemmer.modelos.Serie;
 
@@ -35,6 +37,17 @@ public class Principal {
         calculadora.inclui(meuFilme);
         calculadora.inclui(outroFilme);
         System.out.println(calculadora.getTempoTotal());
+
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtra(meuFilme);
+
+        Episodio episodio = new Episodio();
+        episodio.setNumero(1);
+        episodio.setSerie(lost);
+        episodio.setTotalVisualizacoes(300);
+        filtro.filtra(episodio);
+
+
 
 
     }

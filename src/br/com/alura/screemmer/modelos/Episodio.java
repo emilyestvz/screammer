@@ -1,9 +1,20 @@
 package br.com.alura.screemmer.modelos;
 
-public class Episodio {
+import br.com.alura.screemmer.calculos.Classificavel;
+
+public class Episodio implements Classificavel {
     private int numero;
     private String nome;
     private Serie serie;
+    private int totalVisualizacoes;
+
+    public int getTotalVisualizacoes() {
+        return totalVisualizacoes;
+    }
+
+    public void setTotalVisualizacoes(int totalVisualizacoes) {
+        this.totalVisualizacoes = totalVisualizacoes;
+    }
 
     public String getNome() {
         return nome;
@@ -27,5 +38,15 @@ public class Episodio {
 
     public void setSerie(Serie serie) {
         this.serie = serie;
+    }
+
+    @Override
+    public int getClassificacao() {
+        if (totalVisualizacoes >100){
+            return 4;
+        } else{
+            return 2;
+        }
+
     }
 }
