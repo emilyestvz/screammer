@@ -4,6 +4,8 @@ import br.com.alura.screemmer.modelos.Episodio;
 import br.com.alura.screemmer.modelos.Filme;
 import br.com.alura.screemmer.modelos.Serie;
 
+import java.util.ArrayList;
+
 public class Principal {
     public static void main(String[] args) {
 
@@ -46,6 +48,26 @@ public class Principal {
         episodio.setSerie(lost);
         episodio.setTotalVisualizacoes(300);
         filtro.filtra(episodio);
+
+
+        Filme filmeDaEmy = new Filme();
+        filmeDaEmy.setDuracaoEmMinutos(200);
+        filmeDaEmy.setNome("Fififi");
+        filmeDaEmy.setAnoDeLancamento(2025);
+        filmeDaEmy.avalia(10);
+
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(filmeDaEmy);
+        listaDeFilmes.add(meuFilme);
+        listaDeFilmes.add(outroFilme);
+        System.out.println("Tamanho da lista: " + listaDeFilmes.size());
+        System.out.println(listaDeFilmes);
+        System.out.println(listaDeFilmes.get(0).toString());
+
+
+
+
+
 
 
 
