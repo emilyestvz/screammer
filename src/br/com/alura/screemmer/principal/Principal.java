@@ -1,3 +1,5 @@
+package br.com.alura.screemmer.principal;
+
 import br.com.alura.screemmer.calculos.CalculadoraDeTempo;
 import br.com.alura.screemmer.calculos.FiltroRecomendacao;
 import br.com.alura.screemmer.modelos.Episodio;
@@ -10,8 +12,7 @@ public class Principal {
     public static void main(String[] args) {
 
         // Tipo de referência
-        Filme meuFilme = new Filme();
-//        meuFilme.setNome("O Poderoso Chefão");
+        Filme meuFilme = new Filme("As Branquelas", 1978);
 //        meuFilme.setAnoDeLancamento(1978);
 //        meuFilme.setDuracaoEmMinutos(180);
 //
@@ -23,15 +24,14 @@ public class Principal {
 //        System.out.println("Total de avaliações: " + meuFilme.getTotalDeAvaliacao());
         //System.out.println(meuFilme.obterMedia());
 
-        Serie lost = new Serie();
+        Serie lost = new Serie("Lost", 2000);
 //        lost.setEpisodiosPorTemporada(10);
 //        lost.setTemporadas(10);
 //        lost.setEpisodiosPorTemporada(10);
 //        lost.setMinutosPorEpisodio(50);
 //        System.out.println("Duração para maratonar a série Lost: " + lost.getDuracaoEmMinutos());
 
-        Filme outroFilme = new Filme();
-        outroFilme.setNome("As Branquelas");
+        Filme outroFilme = new Filme("outrofilme", 2024);
         outroFilme.setAnoDeLancamento(2002);
         outroFilme.setDuracaoEmMinutos(140);
 
@@ -50,10 +50,9 @@ public class Principal {
         filtro.filtra(episodio);
 
 
-        Filme filmeDaEmy = new Filme();
+        Filme filmeDaEmy = new Filme("Fififi", 2025);
         filmeDaEmy.setDuracaoEmMinutos(200);
-        filmeDaEmy.setNome("Fififi");
-        filmeDaEmy.setAnoDeLancamento(2025);
+        //filmeDaEmy.setNome("Fififi");
         filmeDaEmy.avalia(10);
 
         ArrayList<Filme> listaDeFilmes = new ArrayList<>();

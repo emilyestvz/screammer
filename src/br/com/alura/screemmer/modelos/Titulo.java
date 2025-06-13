@@ -1,13 +1,19 @@
 package br.com.alura.screemmer.modelos;
 
 // Super classe
-public class Titulo {
+public class Titulo implements Comparable<Titulo> {
     public String nome;
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
     private int totalDeAvaliacao;
     private int duracaoEmMinutos;
+
+    // Construtores
+    public Titulo(String nome, int anoDeLancamento) {
+        this.nome = nome;
+        this.anoDeLancamento = anoDeLancamento;
+    }
 
     //  Métodos Get e Set
     public String getNome() {
@@ -58,5 +64,10 @@ public class Titulo {
 
     public double obterMedia(){
         return somaDasAvaliacoes / totalDeAvaliacao;
+    }
+
+    @Override
+    public int compareTo(Titulo outroTitulo) {
+        return this.getNome().compareTo(outroTitulo.getNome());
     }
 }
