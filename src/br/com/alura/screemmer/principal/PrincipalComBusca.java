@@ -1,5 +1,8 @@
 package br.com.alura.screemmer.principal;
 
+import br.com.alura.screemmer.modelos.Titulo;
+import com.google.gson.Gson;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -26,6 +29,11 @@ public class PrincipalComBusca {
                 .send(request, HttpResponse.BodyHandlers.ofString());
 
         // Exibindo o corpo da resposta
-        System.out.println(response.body());
+        String json = response.body();
+        System.out.println(json);
+
+        Gson gson = new Gson();
+        Titulo meuTitulo = gson.fromJson(json, Titulo.class);
+        System.out.println("Título: " + meuTitulo.getNome());
     }
 }

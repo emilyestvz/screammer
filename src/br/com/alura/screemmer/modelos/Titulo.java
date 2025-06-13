@@ -1,8 +1,12 @@
 package br.com.alura.screemmer.modelos;
 
+import com.google.gson.annotations.SerializedName;
+
 // Super classe
 public class Titulo implements Comparable<Titulo> {
+    @SerializedName("Title")
     public String nome;
+    @SerializedName("Year")
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
