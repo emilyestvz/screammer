@@ -63,13 +63,5 @@ public class Principal {
         System.out.println(listaDeFilmes);
         System.out.println(listaDeFilmes.get(0).toString());
 
-
-
-
-
-
-
-
-
     }
 }

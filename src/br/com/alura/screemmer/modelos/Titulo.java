@@ -1,10 +1,10 @@
 package br.com.alura.screemmer.modelos;
 
+import br.com.alura.screemmer.excecao.ErroDeConversaoException;
 import com.google.gson.annotations.SerializedName;
 
 // Super classe
 public class Titulo implements Comparable<Titulo> {
-    @SerializedName("Title")
     public String nome;
     @SerializedName("Year")
     private int anoDeLancamento;
@@ -21,6 +21,10 @@ public class Titulo implements Comparable<Titulo> {
 
     public Titulo(TituloOmdb meuTituloOmdb) {
         this.nome = meuTituloOmdb.title();
+
+        if (meuTituloOmdb.year().length() > 4) {
+            throw new ErroDeConversaoException("Ano de lançamento não pode ter mais de 4 dígitos. " + meuTituloOmdb.year());
+        }
         this.anoDeLancamento = Integer.parseInt(meuTituloOmdb.year()); // Convertendo o ano de String para int
         this.duracaoEmMinutos = Integer.parseInt(meuTituloOmdb.runtime().replace(" min", ""));
     }
